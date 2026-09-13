@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Star Hotel - Premium Stay & Restaurant in Dhaka</title>
+    
+    <!-- Meta Domain Verification Placeholders -->
+    <!-- Meta Domain Verification Code: Place your Facebook/Meta Tag below -->
+    <meta name="facebook-domain-verification" content="YOUR_META_VERIFICATION_CODE_HERE" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bright Star Hotel & Restaurant - Providing comfortable accommodation, luxury amenities, and fine dining at 32/2 Station Rd, Dhaka 1215.">
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #d97706;
+            --accent-hover: #b45309;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,0.85);
+            padding: 8px 5%;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar a {
+            color: #fbbf24;
+            text-decoration: none;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo i {
+            color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        .btn-book {
+            background: var(--accent);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            transition: background 0.3s;
+        }
+        .btn-book:hover {
+            background: var(--accent-hover);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .btn-main {
+            background: var(--accent);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        section {
+            padding: 70px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .room-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .room-card:hover {
+            transform: translateY(-5px);
+        }
+        .room-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .room-info {
+            padding: 20px;
+        }
+        .room-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        .room-features {
+            display: flex;
+            gap: 15px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .room-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .legal-tabs {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+        .legal-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .legal-header h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+        }
+        .legal-content h4 {
+            color: var(--primary-dark);
+            margin: 15px 0 5px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 50px 5% 20px 5%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-col h4 {
+            color: #fbbf24;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-col p, .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            line-height: 2;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+        .copyright {
+            text-align: center;
+            color: #64748b;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div><i class="fa-solid fa-location-dot"></i> 32/2 Station Rd, Dhaka 1215, Bangladesh</div>
+        <div><i class="fa-solid fa-envelope"></i> contact@brightstarhotel.site</div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo"><i class="fa-solid fa-star"></i> Bright Star Hotel</a>
+            <ul class="nav-links">
+                <li><a href="#about">পরিচিতি</a></li>
+                <li><a href="#rooms">রুমসমূহ</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+                <li><a href="#terms">Terms & Conditions</a></li>
+                <li><a href="#refund">Refund Policy</a></li>
+                <li><a href="#booking" class="btn-book">রুম বুক করুন</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Bright Star Hotel & Restaurant</h1>
+            <p>ঢাকার প্রাণকেন্দ্রে আরামদায়ক ও মার্জিত আবাসন এবং সুস্বাদু খাবারের সেরা ঠিকানা।</p>
+            <div class="hero-btns">
+                <a href="#rooms" class="btn-main">রুম সমূহ দেখুন</a>
+                <a href="#contact" class="btn-outline">যোগাযোগ করুন</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>আমাদের সেবাসমূহ</h2>
+            <p>আপনার ভ্রমণকে আনন্দদায়ক ও স্মরণীয় করতে আমাদের প্রিমিয়াম সেবা</p>
+        </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fa-solid fa-bed"></i>
+                <h3>আরামদায়ক রুম</h3>
+                <p>আধুনিক আসবাবপত্র, এয়ার কন্ডিশন ও ২৪ ঘণ্টা হট/কোল্ড ওয়াটার সুবিধা।</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>রেস্টুরেন্ট সেবা</h3>
+                <p>স্বাস্থ্যেকর ও সুস্বাদু দেশি-বিদেশি খাবারের চমৎকার ব্যবস্থা।</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-wifi"></i>
+                <h3>হাই-স্পিড ওয়াইফাই</h3>
+                <p>হোটেলের প্রতিটি রুমে হাই-স্পিড ইন্টারনেট সুবিধা।</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms">
+        <div class="section-title">
+            <h2>আমাদের রুম এবং ক্যাটাগরি</h2>
+            <p>আপনার প্রয়োজন অনুযায়ী সঠিক রুম নির্বাচন করুন</p>
+        </div>
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="room-info">
+                    <h3>Deluxe AC Room</h3>
+                    <div class="room-features">
+                        <span><i class="fa-solid fa-user"></i> ২ জন</span>
+                        <span><i class="fa-solid fa-wifi"></i> ফ্রি ওয়াইফাই</span>
+                    </div>
+                    <div class="room-price">৳ ২,৫০০ / রাত</div>
+                    <a href="#contact" class="btn-book" style="display:inline-block; text-align:center; width:100%;">বুকিং করুন</a>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="room-info">
+                    <h3>Executive Suite</h3>
+                    <div class="room-features">
+                        <span><i class="fa-solid fa-user"></i> ৩-৪ জন</span>
+                        <span><i class="fa-solid fa-tv"></i> স্মার্ট টিভি</span>
+                    </div>
+                    <div class="room-price">৳ ৪,০০০ / রাত</div>
+                    <a href="#contact" class="btn-book" style="display:inline-block; text-align:center; width:100%;">বুকিং করুন</a>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="room-info">
+                    <h3>Standard Non-AC Room</h3>
+                    <div class="room-features">
+                        <span><i class="fa-solid fa-user"></i> ১-২ জন</span>
+                        <span><i class="fa-solid fa-shower"></i> অ্যাটাচড বাথ</span>
+                    </div>
+                    <div class="room-price">৳ ১,৫০০ / রাত</div>
+                    <a href="#contact" class="btn-book" style="display:inline-block; text-align:center; width:100%;">বুকিং করুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="terms">
+        <div class="legal-tabs">
+            <div class="legal-header">
+                <h3><i class="fa-solid fa-file-contract"></i> Terms and Conditions (শর্তাবলী)</h3>
+            </div>
+            <div class="legal-content">
+                <p>Welcome to <strong>Bright Star Hotel & Restaurant</strong> (brightstarhotel.site). By booking a room or using our services, you agree to comply with the following terms and conditions:</p>
+                
+                <h4>১. বুকিং এবং চেক-ইন নীতি (Booking & Check-in)</h4>
+                <p>বুকিং নিশ্চিত করতে জাতীয় পরিচয়পত্র (NID) বা পাসপোর্ট কপি প্রদান করা বাধ্যতামূলক। চেক-ইন সময় দুপুর ১২:০০ টা এবং চেক-আউট সময় সকাল ১১:০০ টা।</p>
+
+                <h4>২. পেমেন্ট শর্তাবলী (Payment Terms)</h4>
+                <p>রুম বুকিংয়ের জন্য ৫০% অগ্রিম প্রদান করতে হবে। অবশিষ্ট অর্থ চেক-ইনের সময় পরিশোধযোগ্য।</p>
+
+                <h4>৩. আচরণবিধি (Code of Conduct)</h4>
+                <p>হোটেল প্রাঙ্গণে কোনো প্রকার অসামাজিক বা অবৈধ কর্মকাণ্ড সম্পূর্ণ নিষিদ্ধ। কর্তৃপক্ষের নিয়মাবলী মেনে চলা বাধ্যতামূলক।</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="refund">
+        <div class="legal-tabs">
+            <div class="legal-header">
+                <h3><i class="fa-solid fa-rotate-left"></i> Refund & Cancellation Policy (ফেরত নীতি)</h3>
+            </div>
+            <div class="legal-content">
+                <p><strong>Bright Star Hotel & Restaurant</strong> গ্রাহক সন্তুষ্টিকে সর্বোচ্চ প্রাধান্য দেয়। আমাদের বুকিং ক্যানসেলেশন ও রিফান্ড নীতি নিচে দেওয়া হলো:</p>
+                
+                <h4>১. বুকিং বাতিল এবং রিফান্ড (Cancellation & Refund)</h4>
+                <ul>
+                    <li>চেক-ইনের ২৪ ঘণ্টা পূর্বে বুকিং বাতিল করলে ৮০% টাকা ফেরত দেওয়া হবে।</li>
+                    <li>চেক-ইনের ১২-২৪ ঘণ্টার মধ্যে বাতিল করলে ৫০% টাকা ফেরতযোগ্য।</li>
+                    <li>চেক-ইনের ১২ ঘণ্টার কম সময়ে বাতিল করলে কোনো অ্যাডভান্স রিফান্ড করা হবে না।</li>
+                </ul>
+
+                <h4>২. রিফান্ড প্রক্রিয়া (Refund Processing Time)</h4>
+                <p>অনুমোদিত রিফান্ডের টাকা ৭-১০ কার্যদিবসের মধ্যে গ্রাহকের মূল পেমেন্ট মেথড (বিকাশ/নগদ/ব্যাংক) অ্যাকাউন্টে ফেরত দেওয়া হবে।</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>যোগাযোগ ও অবস্থান</h2>
+            <p>যেকোনো তথ্য বা বুকিংয়ের জন্য আমাদের সাথে যোগাযোগ করুন</p>
+        </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>ঠিকানা</h3>
+                <p>Bright Star Hotel & Restaurant<br>32/2 Station Rd, Dhaka 1215, Bangladesh</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-phone"></i>
+                <h3>ফোন নম্বর</h3>
+                <p>+880 1800-000000<br>+880 1700-000000</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>ইমেইল</h3>
+                <p>info@brightstarhotel.site<br>support@brightstarhotel.site</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Bright Star Hotel</h4>
+                <p>ঢাকার স্টেশন রোডে অবস্থিত একটি প্রিমিয়াম আবাসিক হোটেল ও রেস্টুরেন্ট। আমরা প্রদান করি সর্বোচ্চ স্বাচ্ছন্দ্য ও মানসম্পন্ন সেবা।</p>
+            </div>
+            <div class="footer-col">
+                <h4>গুরুত্বপূর্ণ লিংক</h4>
+                <ul>
+                    <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#rooms">রুম ক্যাটাগরি</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                    <li><a href="#refund">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>যোগাযোগ</h4>
+                <p>৩২/২ স্টেশন রোড, ঢাকা ১২১৫</p>
+                <p>ইমেইল: info@brightstarhotel.site</p>
+                <p>ডোমেইন: brightstarhotel.site</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Bright Star Hotel & Restaurant. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

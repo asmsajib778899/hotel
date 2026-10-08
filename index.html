@@ -1,566 +1,198 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Star Hotel & Restaurant - Official Booking</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage Sweets (হেরিটেজ সুইটস) - Premium Bengali Desserts & Fast Food</title>
+  <meta name="description" content="Order traditional Bengali sweets, Hafsi Sandesh, Komolabhog, Mawa Laddoo, Mishti Doi & Fast Food online from Heritage Sweets, Bashundhara R/A, Dhaka. Fast home delivery available.">
+  
+  <!-- FontAwesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#1E1E1E',
+            charcoalDark: '#121212',
+            brandCream: '#FAF3E0',
+            brandOrange: '#FF6B00',
+            brandRed: '#D32F2F',
+            brandGold: '#DAA520',
+            brandGoldDark: '#B8860B',
+          },
+          fontFamily: {
+            sans: ['Hind Siliguri', 'Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
-    <!-- Meta Domain Verification Code: Place your Facebook/Meta Tag below -->
-    <meta name="description" content="Bright Star Hotel & Restaurant - Comfortable accommodation at 32/2 Station Rd, Dhaka 1215.">
+  <!-- Schema.org Restaurant Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Heritage Sweets (হেরিটেজ সুইটস)",
+    "image": "https://images.unsplash.com/photo-1599785209707-a456fc1337cc?auto=format&fit=crop&w=1200&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot-56/A, Umme Kulsum Road",
+      "addressLocality": "Bashundhara R/A, Dhaka",
+      "postalCode": "1229",
+      "addressCountry": "BD"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.8130,
+      "longitude": 90.4280
+    },
+    "telephone": "01834438772",
+    "servesCuisine": ["Bengali", "Desserts", "Sweets", "Snacks"],
+    "priceRange": "৳১০০ - ৳২,০০০"
+  }
+  </script>
 
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --bkg-blue: #003580;
-            --bkg-blue-light: #0071c2;
-            --bkg-yellow: #ffb700;
-            --text-dark: #1a1a1a;
-            --text-muted: #6b6b6b;
-            --border-color: #e7e7e7;
-            --white: #ffffff;
-            --rating-blue: #003580;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Hind Siliguri', 'Roboto', sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: var(--text-dark);
-        }
-
-        /* Header with Custom Bright Star Hotel Logo */
-        header {
-            background-color: var(--bkg-blue);
-            color: var(--white);
-            padding: 12px 16px;
-        }
-        .header-container {
-            max-width: 1024px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .logo i {
-            color: var(--bkg-yellow);
-        }
-        .header-icons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        .header-icons i {
-            font-size: 1.2rem;
-        }
-
-        /* Top Nav Tabs */
-        .nav-tabs {
-            background-color: var(--bkg-blue);
-            padding: 0 16px 12px 16px;
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-        }
-        .tab-item {
-            border: 1px solid var(--white);
-            border-radius: 20px;
-            padding: 6px 16px;
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-        }
-        .tab-item.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-color: var(--white);
-        }
-
-        /* Booking Yellow Search Box */
-        .search-box-container {
-            background-color: var(--bkg-yellow);
-            padding: 12px;
-            max-width: 1024px;
-            margin: 0 auto;
-        }
-        .search-field {
-            background-color: var(--white);
-            border-radius: 4px;
-            padding: 10px 12px;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            border: 2px solid #ffb700;
-        }
-        .search-field i {
-            color: #6b6b6b;
-            font-size: 1.1rem;
-        }
-        .search-field input {
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        .dates-row, .guests-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6px;
-        }
-        .guests-row {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-        .field-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            display: block;
-        }
-        .field-value {
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .btn-search {
-            background-color: var(--bkg-blue-light);
-            color: var(--white);
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 4px;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1024px;
-            margin: 15px auto;
-            padding: 0 12px;
-        }
-
-        .hotel-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        /* 5 Photos Gallery Slider Grid */
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 4px;
-            background: #e7e7e7;
-            padding: 2px;
-            overflow-x: auto;
-        }
-        .photo-gallery img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 2px;
-        }
-        @media (max-width: 600px) {
-            .photo-gallery img {
-                height: 90px;
-            }
-        }
-
-        .see-more-btn {
-            background: #ffffff;
-            color: var(--bkg-blue-light);
-            text-align: center;
-            padding: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border-bottom: 1px solid var(--border-color);
-            cursor: pointer;
-        }
-        .see-more-btn:hover {
-            text-decoration: underline;
-        }
-
-        .hotel-details {
-            padding: 12px;
-        }
-        .hotel-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--bkg-blue);
-            margin-bottom: 2px;
-        }
-        .stars {
-            color: var(--bkg-yellow);
-            font-size: 0.8rem;
-            margin-bottom: 8px;
-        }
-        .rating-box {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-        .rating-badge {
-            background-color: var(--rating-blue);
-            color: var(--white);
-            padding: 3px 6px;
-            border-radius: 4px 4px 4px 0;
-            font-weight: 700;
-            font-size: 0.85rem;
-        }
-        .rating-text {
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-        .rating-reviews {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .location-info {
-            font-size: 0.85rem;
-            color: #262626;
-            margin-bottom: 4px;
-        }
-        .distance-info {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
-
-        /* Customer Reviews Section */
-        .reviews-section {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border-color);
-        }
-        .reviews-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-        }
-        .reviews-header h3 {
-            color: var(--bkg-blue);
-            font-size: 1.1rem;
-        }
-        .review-card {
-            border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-        .review-card:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .reviewer-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 4px;
-        }
-        .reviewer-avatar {
-            width: 30px;
-            height: 30px;
-            background: var(--bkg-blue-light);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.8rem;
-        }
-        .reviewer-name {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .review-score {
-            margin-left: auto;
-            background: #e8f0fe;
-            color: var(--bkg-blue);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.8rem;
-        }
-        .review-text {
-            font-size: 0.85rem;
-            color: #4a4a4a;
-        }
-
-        /* Legal & Info Sections */
-        .info-section {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border-color);
-        }
-        .info-section h3 {
-            color: var(--bkg-blue);
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
-        }
-        .info-section p, .info-section li {
-            font-size: 0.88rem;
-            color: #4a4a4a;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--bkg-blue);
-            color: var(--white);
-            padding: 25px 16px 15px 16px;
-            margin-top: 20px;
-        }
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-        .footer-copy {
-            font-size: 0.75rem;
-            color: #a2c4e8;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 10px;
-            text-align: center;
-        }
-    </style>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gold-gradient { background: linear-gradient(135deg, #DAA520 0%, #FF6B00 100%); }
+    .glass-nav { background: rgba(30, 30, 30, 0.95); backdrop-filter: blur(10px); }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #1E1E1E; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #DAA520; border-radius: 3px; }
+  </style>
 </head>
-<body>
+<body class="bg-brandCream text-charcoal font-sans antialiased selection:bg-brandOrange selection:text-white pb-16 lg:pb-0">
 
-    <!-- Custom Header with Bright Star Hotel Logo -->
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-star"></i> Bright Star Hotel
-            </a>
-            <div class="header-icons">
-                <i class="fa-regular fa-bell"></i>
-                <i class="fa-regular fa-user-circle"></i>
-            </div>
+  <!-- TOP ANNOUNCEMENT MARQUEE -->
+  <div class="bg-brandRed text-white text-xs font-semibold py-1.5 px-4 shadow-inner">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="overflow-hidden w-full">
+        <div class="whitespace-nowrap animate-marquee flex space-x-12">
+          <span>✨ বিকাশ পেমেন্টে পাচ্ছেন ১০% ইনস্ট্যান্ট ক্যাশব্যাক! কুপন কোড: <strong>HERITAGE10</strong></span>
+          <span>•</span>
+          <span>🍬 ঐতিহ্যবাহী হাফসী সন্দেশ, কমলাভোগ ও মাওয়া লাড্ডু এখন অনলাইনে অর্ডার করুন!</span>
+          <span>•</span>
+          <span>🚚 বসুন্ধরা আবাসিক এলাকায় মাত্র ৩০ মিনিটে এক্সপ্রেস হোম ডেলিভারি!</span>
         </div>
-    </header>
+      </div>
+      <div class="hidden md:flex items-center space-x-4 pl-4 text-[11px] whitespace-nowrap">
+        <span><i class="fa-solid fa-phone text-brandGold mr-1"></i> ০১৮৩৪-৪৩OD৭২</span>
+        <span class="text-brandGold">|</span>
+        <span><i class="fa-solid fa-clock text-brandGold mr-1"></i> সকাল ৯:০০ - রাত ১০:০০</span>
+      </div>
+    </div>
+  </div>
 
-    <!-- Navigation Tabs -->
-    <div class="nav-tabs">
-        <a href="#" class="tab-item active"><i class="fa-solid fa-bed"></i> Stays</a>
-        <a href="#" class="tab-item"><i class="fa-solid fa-utensils"></i> Restaurant</a>
-        <a href="#reviews" class="tab-item"><i class="fa-solid fa-comments"></i> Reviews</a>
+  <!-- STICKY HEADER & NAVIGATION -->
+  <header class="sticky top-0 z-40 glass-nav text-white border-b border-brandGold/30 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-11 h-11 rounded-full border-2 border-brandGold flex items-center justify-center bg-charcoalDark text-brandGold font-bold text-xl shadow-lg group-hover:scale-105 transition">
+            HS
+          </div>
+          <div>
+            <span class="font-bold text-xl tracking-tight text-white block leading-none">HERITAGE <span class="text-brandGold">SWEETS</span></span>
+            <span class="text-[10px] text-brandGold tracking-widest uppercase block mt-1">হেরিটেজ সুইটস • বসুন্ধরা</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex space-x-6 text-sm font-medium">
+          <a href="#hero" class="hover:text-brandGold transition text-brandGold">হোম (Home)</a>
+          <a href="#best-sellers" class="hover:text-brandGold transition">জনপ্রিয় মিষ্টি (Menu)</a>
+          <a href="#combos" class="hover:text-brandGold transition">কম্বো অফার (Combos)</a>
+          <a href="#about" class="hover:text-brandGold transition">আমাদের কথা (About)</a>
+          <a href="#gallery" class="hover:text-brandGold transition">গ্যালারি (Gallery)</a>
+          <a href="#reviews" class="hover:text-brandGold transition">রিভিউ (Reviews)</a>
+          <a href="#contact" class="hover:text-brandGold transition">যোগাযোগ (Contact)</a>
+        </nav>
+
+        <!-- CTA & Cart Trigger -->
+        <div class="hidden lg:flex items-center space-x-4">
+          <button onclick="toggleCartDrawer()" class="relative bg-charcoalDark hover:bg-black text-brandGold border border-brandGold/40 font-bold px-4 py-2.5 rounded-lg text-xs uppercase tracking-wider transition">
+            <i class="fa-solid fa-cart-shopping mr-1.5 text-brandOrange"></i> কার্ট 
+            <span id="cart-badge" class="absolute -top-2 -right-2 bg-brandRed text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px]">0</span>
+          </button>
+
+          <a href="#best-sellers" class="gold-gradient hover:brightness-110 text-charcoal font-bold px-5 py-2.5 rounded-lg shadow-lg transition transform hover:-translate-y-0.5 text-xs uppercase tracking-wider">
+            অনলাইন অর্ডার
+          </a>
+        </div>
+
+        <!-- Mobile Drawer Hamburger -->
+        <div class="flex items-center space-x-3 lg:hidden">
+          <button onclick="toggleCartDrawer()" class="relative text-brandGold p-2 text-lg">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="mobile-cart-badge" class="absolute top-0 right-0 bg-brandRed text-white rounded-full w-4 h-4 flex items-center justify-center text-[9px]">0</span>
+          </button>
+          <button onclick="toggleMobileMenu()" class="text-brandGold text-2xl focus:outline-none p-1">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- Booking Yellow Search Form Section -->
-    <div class="search-box-container">
-        <!-- Location Search -->
-        <div class="search-field">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" value="Bright Star Hotel, Station Rd, Dhaka" readonly>
-        </div>
-
-        <!-- Date Picker Row -->
-        <div class="dates-row">
-            <div class="search-field">
-                <div>
-                    <span class="field-label">Check-in date</span>
-                    <span class="field-value">Sun 14 Sept 2026</span>
-                </div>
-            </div>
-            <div class="search-field">
-                <div>
-                    <span class="field-label">Check-out date</span>
-                    <span class="field-value">Mon 15 Sept 2026</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Guests Row -->
-        <div class="guests-row">
-            <div class="search-field">
-                <div>
-                    <span class="field-label">Adults</span>
-                    <span class="field-value">2</span>
-                </div>
-            </div>
-            <div class="search-field">
-                <div>
-                    <span class="field-label">Children</span>
-                    <span class="field-value">0</span>
-                </div>
-            </div>
-            <div class="search-field">
-                <div>
-                    <span class="field-label">Rooms</span>
-                    <span class="field-value">1</span>
-                </div>
-            </div>
-        </div>
-
-        <button class="btn-search">Search Availability</button>
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-charcoalDark border-b border-brandGold/30 px-6 py-6 space-y-4 text-sm font-medium">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block text-brandGold">হোম</a>
+      <a href="#best-sellers" onclick="toggleMobileMenu()" class="block text-white hover:text-brandGold">জনপ্রিয় মিষ্টি ও স্ন্যাক্স</a>
+      <a href="#combos" onclick="toggleMobileMenu()" class="block text-white hover:text-brandGold">কম্বো ও স্পেশাল অফার</a>
+      <a href="#ai-recommendation" onclick="toggleMobileMenu()" class="block text-white hover:text-brandGold">AI ফুড সিলেক্টর</a>
+      <a href="#reservation" onclick="toggleMobileMenu()" class="block text-white hover:text-brandGold">টেবিল বুকিং / ক্যাটারিং</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block text-white hover:text-brandGold">যোগাযোগ ও লোকেশন</a>
+      <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+        <a href="tel:01834438772" class="text-brandGold"><i class="fa-solid fa-phone mr-1"></i> কল করুন</a>
+        <a href="https://wa.me/8801834438772" target="_blank" class="text-green-400"><i class="fa-brands fa-whatsapp mr-1"></i> হোয়াটসঅ্যাপ</a>
+      </div>
     </div>
+  </header>
 
-    <!-- Main Container -->
-    <div class="container">
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative bg-charcoal text-white py-16 sm:py-24 overflow-hidden border-b border-brandGold/20">
+      <div class="absolute inset-0 z-0 opacity-30">
+        <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337cc?auto=format&fit=crop&w=2000&q=80" alt="Heritage Sweets Ambiance" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-transparent"></div>
+      </div>
 
-        <!-- Hotel Card with 5 Photos -->
-        <div class="hotel-card">
-            <!-- 5 Hotel Images Gallery -->
-            <div class="photo-gallery">
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80" alt="Bright Star Exterior">
-                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=400&q=80" alt="Deluxe Room">
-                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=400&q=80" alt="Executive Suite">
-                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=400&q=80" alt="Lobby Lounge">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" alt="Restaurant Dining">
-            </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-block bg-charcoalDark border border-brandGold/40 text-brandGold text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg">
+          খাঁটি ঘি ও খাঁটি দুধে তৈরি ঐতিহ্যবাহী মিষ্টি
+        </span>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+          স্বাদে ও ঐতিহ্যে অনন্য <br><span class="text-brandGold">হেরিটেজ সুইটস (Heritage Sweets)</span>
+        </h1>
+        <p class="max-w-3xl mx-auto text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+          বসুন্ধরা আবাসিক এলাকার উম্মে কুলসুম রোডে আমরা পরিবেশন করছি সুস্বাদু হাফসী সন্দেশ, রসালো কমলাভোগ, মাওয়া লাড্ডু, মিষ্টি দই সহ প্রিমিয়াম কোয়ালিটির মিষ্টান্ন ও ড্রাই ফুড।
+        </p>
 
-            <!-- See More Button -->
-            <div class="see-more-btn">
-                <i class="fa-solid fa-images"></i> See more photos (15+)
-            </div>
-
-            <div class="hotel-details">
-                <div class="hotel-title">Bright Star Hotel & Restaurant</div>
-                <div class="stars">
-                    <i class="fa-solid fa-square"></i>
-                    <i class="fa-solid fa-square"></i>
-                    <i class="fa-solid fa-square"></i>
-                    <i class="fa-solid fa-square"></i>
-                </div>
-                
-                <div class="rating-box">
-                    <span class="rating-badge">9.3</span>
-                    <span class="rating-text">Superb</span>
-                    <span class="rating-reviews">• 146 guest reviews</span>
-                </div>
-
-                <div class="location-info">
-                    <i class="fa-solid fa-location-dot"></i> 32/2 Station Rd, Dhaka 1215, Bangladesh
-                </div>
-                <div class="distance-info">
-                    <i class="fa-solid fa-train"></i> 0.7 km from city centre • 500 m from station
-                </div>
-            </div>
+        <!-- Hero Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+          <a href="#best-sellers" class="gold-gradient hover:brightness-110 text-charcoal font-bold px-8 py-3.5 rounded-lg shadow-xl text-sm uppercase tracking-wider transition transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-utensils mr-2"></i> মিষ্টির মেনু দেখুন
+          </a>
+          <a href="https://wa.me/8801834438772" target="_blank" class="bg-charcoalDark border border-brandGold/50 hover:bg-black text-white font-semibold px-8 py-3.5 rounded-lg text-sm transition">
+            <i class="fa-brands fa-whatsapp text-green-400 mr-2"></i> সরাসরি হোয়াটসঅ্যাপে অর্ডার
+          </a>
         </div>
 
-        <!-- Customer Reviews Section -->
-        <div class="reviews-section" id="reviews">
-            <div class="reviews-header">
-                <h3><i class="fa-solid fa-thumbs-up"></i> Customer Reviews</h3>
-                <span style="font-size:0.85rem; color:var(--bkg-blue-light); font-weight:600;">9.3 / 10 Superb</span>
-            </div>
-
-            <!-- Review 1 -->
-            <div class="review-card">
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">R</div>
-                    <span class="reviewer-name">Rahim Chowdhury</span>
-                    <span class="review-score">9.6</span>
-                </div>
-                <div class="review-text">
-                    "স্টেশন রোডের খুব কাছে চমৎকার অবস্থান। সার্ভিস এবং রুম ক্লিনিং খুব ভালো লেগেছে।"
-                </div>
-            </div>
-
-            <!-- Review 2 -->
-            <div class="review-card">
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">S</div>
-                    <span class="reviewer-name">Sadia Islam</span>
-                    <span class="review-score">9.0</span>
-                </div>
-                <div class="review-text">
-                    "Very polite staff and delicious food in the restaurant. Highly recommended for stay!"
-                </div>
-            </div>
-
-            <!-- Review 3 -->
-            <div class="review-card">
-                <div class="reviewer-info">
-                    <div class="reviewer-avatar">T</div>
-                    <span class="reviewer-name">Tanvir Ahmed</span>
-                    <span class="review-score">9.4</span>
-                </div>
-                <div class="review-text">
-                    "ঢাকার প্রাণকেন্দ্রে বাজেটের মধ্যে অসাধারণ সার্ভিস ও নিরাপদ পরিবেশ।"
-                </div>
-            </div>
-        </div>
-
-        <!-- Terms and Conditions (Meta Verification Requirement) -->
-        <div class="info-section" id="terms">
-            <h3>Terms & Conditions (শর্তাবলী)</h3>
-            <p>Welcome to <strong>Bright Star Hotel & Restaurant</strong>. By making a reservation or staying at our property, you agree to the following terms:</p>
-            <p><strong>১. চেক-ইন এবং আইডি ভেরিফিকেশন:</strong> চেক-ইন করার সময় জাতীয় পরিচয়পত্র (NID) বা পাসপোর্ট প্রদর্শন করা বাধ্যতামূলক।</p>
-            <p><strong>২. আচরণবিধি:</strong> হোটেল প্রাঙ্গণে যেকোনো ধরনের অবৈধ বা অসামাজিক কর্মকাণ্ড কঠোরভাবে নিষিদ্ধ।</p>
-        </div>
-
-        <!-- Refund Policy Section -->
-        <div class="info-section" id="refund">
-            <h3>Refund & Cancellation Policy (রিফান্ড নীতি)</h3>
-            <p><strong>১. বুকিং বাতিল:</strong> চেক-ইনের ২৪ ঘণ্টা পূর্বে বুকিং বাতিল করলে ৮০% টাকা ফেরত পাওয়া যাবে।</p>
-            <p><strong>২. রিফান্ড সময়সীমা:</strong> অনুমোদিত রিফান্ডের অর্থ ৭-১০ কার্যদিবসের মধ্যে আপনার বিকাশ/ব্যাংক অ্যাকাউন্টে ফেরত পাঠানো হবে।</p>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="info-section" id="contact">
-            <h3>Contact Us (যোগাযোগ)</h3>
-            <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> contact@brightstarhotel.site</p>
-            <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +8801870517703</p>
-            <p><i class="fa-solid fa-map-location-dot"></i> <strong>Address:</strong> 32/2 Station Rd, Dhaka 1215, Bangladesh</p>
-        </div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="#terms">Terms & Conditions</a> • 
-            <a href="#refund">Refund Policy</a> • 
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-copy">
-            &copy; 2026 Bright Star Hotel & Restaurant (brightstarhotel.site). All rights reserved.
-        </div>
-    </footer>
-
-</body>
-</html>
+        <!-- Trust Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-xs text-brandCream">
+          <div class="bg-charcoalDark/80 p-3 rounded-lg border border-brandGold/20">
+            <i class="fa-solid fa-leaf text-brandGold text-lg mb-1 block"></i>
+            <span>১০০% প্রিমিয়াম উপাদান</span>
+          </div>
+          <div class="bg-charcoalDark/80 p-3 rounded-lg border border-brandGold/20">
+            <i class="fa-solid fa-motorcycle text-brandGold text-lg mb-1 block"></i>
+            <span>দ্রুত হোম ডেলিভারি</span>
+          </div>
+          <div class="bg-charcoalDark/80 p-3 rounded-lg border border-brandGold/20">
+            <i class="fa-solid fa-pump-soap text-brandGold text-
